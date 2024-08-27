@@ -1,0 +1,24 @@
+.aboutUs {
+    position: relative;
+}
+
+.personPicture {
+    width: 300px;
+    height: 400px;
+    background-color: var(--darkPink);
+    position: absolute;
+    left: 30px;
+}
+
+.aboutUs .title {
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.textAlign {
+    width: 80%;
+    position: absolute;
+    right: 10px;
+    text-align: justify;
+}

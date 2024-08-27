@@ -3,6 +3,7 @@
     height: 700px;
     overflow: hidden;
     position: relative;
+    margin-bottom: 10vh;
 }
 
 .carouselPicture {
