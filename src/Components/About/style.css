@@ -27,3 +27,15 @@
     right: 10px;
     text-align: justify;
 }
+
+@media (max-width: 768px) {
+    .personPicture {
+        width: 40vw;
+        height: 60vh;
+    }
+
+    .textAlign {
+        width: 55vw;
+        text-align: justify;
+    }
+}
