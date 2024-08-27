@@ -1,0 +1,23 @@
+.sectionProduct {
+  align-items: center;
+}
+
+.containerProduct{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  position: relative;
+  top: 10vh;
+}
+
+.Products{
+  background-color: var(--lightGreen);
+  width: 330px;
+  height: 330px;
+  border-radius: 15px;
+}
+
+
+
+
