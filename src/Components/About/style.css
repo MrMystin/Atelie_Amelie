@@ -1,13 +1,18 @@
 .aboutUs {
     position: relative;
+    margin-bottom: 30px;
 }
 
 .personPicture {
-    width: 300px;
-    height: 400px;
+    width: 16vw;
+    height: 40vh;
     background-color: var(--darkPink);
     position: absolute;
-    left: 30px;
+    left: 1.5vw;
+    border-radius: 15px;
+    background-size: cover;
+    background-position: center;
+    background-image: url(../../assets/images/R.png);
 }
 
 .aboutUs .title {
@@ -17,7 +22,7 @@
 }
 
 .textAlign {
-    width: 80%;
+    width: 80vw;
     position: absolute;
     right: 10px;
     text-align: justify;
