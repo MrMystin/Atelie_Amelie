@@ -11,3 +11,10 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/*Definam as cores das variaveis aqui!*/
+:root {
+  --lightPink: #fce4ec;
+  --darkPink: #e75480;
+  --darkGreen: #5ca675;
+}
