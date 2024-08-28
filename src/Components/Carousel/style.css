@@ -1,0 +1,65 @@
+.carousel {
+    width: 100vw;
+    height: 700px;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 10vh;
+}
+
+.carouselPicture {
+    width: 100%;
+    height: 700px;
+    top: 0;
+    right: 0;
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    animation-name: appearCarousel;
+    animation-duration: .6s;
+    animation-iteration-count: linear;
+}
+
+@keyframes appearCarousel {
+    from {
+        right: -100%;
+    }
+     to {
+        right: 0%;
+     }
+}
+
+.carouselPicture.picture1,
+.outsideCarousel.picture1 {
+    background-image: url(../../assets/images/Banner1.png);
+}
+
+.carouselPicture.testPicture,
+.outsideCarousel.testPicture {
+    background-color: aliceblue;
+    color: #191919;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.outsideCarousel {
+    left: -100%;
+    width: 100%;
+    height: 700px;
+    top: 0;
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    animation-name: disappearCarousel;
+    animation-duration: .6s;
+    animation-iteration-count: linear;
+}
+
+@keyframes disappearCarousel {
+    from {
+        left: 0%;
+    }
+     to {
+        left: -100%;
+     }
+}
