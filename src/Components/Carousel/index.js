@@ -28,12 +28,14 @@ const Carousel = () => {
 
     return (
         <div className="carousel">
+            <div className="carouselButtons previous" onClick={console.log('Prev')}></div>
             <div className="carouselPicture picture1" id="carouselPicture1">
 
             </div>
             <div className="outsideCarousel testPicture" id="carouselPicture2">
                 <h1>Teste Carrossel</h1>
             </div>
+            <div className="carouselButtons next" onClick={console.log('Next')}></div>
         </div>
     )
 }
