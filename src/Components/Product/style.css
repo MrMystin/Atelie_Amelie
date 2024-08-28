@@ -16,6 +16,11 @@
   border-radius: 15px;
 }
 
+@media (max-width: 768px) {
+  .Products {
+    width: 75vw;
+  }
+}
 
 
 
