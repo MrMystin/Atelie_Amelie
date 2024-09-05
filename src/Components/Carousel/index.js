@@ -8,7 +8,20 @@ const Carousel = () => {
 
   const carouselNum = 2;
   let actualCarousel = 1;
-  const carouselAnim = setInterval(() => {
+  var carouselAnim = setInterval(() => {
+    document
+      .getElementById('carouselPicture1')
+      .removeAttribute('class');
+    document
+      .getElementById('carouselPicture2')
+      .removeAttribute('class');
+    document
+      .getElementById('carouselPicture1')
+      .className = 'picture1';
+    document
+      .getElementById('carouselPicture2')
+      .className = 'testPicture';
+    
     if (actualCarousel === carouselNum) {
       actualCarousel = 1;
       document
@@ -50,9 +63,7 @@ const Carousel = () => {
         className="carouselButtons previous"
         id="previousCarousel"
         onClick={() => {
-          if (carouselAnim != undefined) {
-            clearInterval(carouselAnim)
-          }
+          clearInterval(carouselAnim)
 
           document
             .getElementById('carouselPicture1')
@@ -103,9 +114,8 @@ const Carousel = () => {
         <h1>Teste Carrossel</h1>
       </div>
       <div className="carouselButtons next" id="nextCarousel" onClick={() => {
-        if (carouselAnim != undefined) {
-          clearInterval(carouselAnim)
-        }
+
+        clearInterval(carouselAnim)
 
         document
           .getElementById('carouselPicture1')
