@@ -14,15 +14,21 @@
 }
 
 .carouselButtons.previous {
-    background-image: linear-gradient(to right, #19191977, #0000);
     left: 0;
     top: 0;
 }
 
+.carouselButtons.previous:hover {
+    background-image: linear-gradient(to right, #19191977, #0000);
+}
+
 .carouselButtons.next {
-    background-image: linear-gradient(to left, #19191977, #0000);
     right: 0;
     top: 0;
+}
+
+.carouselButtons.next:hover {
+    background-image: linear-gradient(to left, #19191977, #0000);
 }
 
 .carouselPicture {
@@ -47,13 +53,39 @@
      }
 }
 
+.carouselPictureAlt {
+    width: 100%;
+    height: 700px;
+    top: 0;
+    left: 0;
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    animation-name: appearCarouselAlt;
+    animation-duration: .6s;
+    animation-iteration-count: linear;
+}
+
+@keyframes appearCarouselAlt {
+    from {
+        left: -100%;
+    }
+     to {
+        left: 0%;
+     }
+}
+
 .carouselPicture.picture1,
-.outsideCarousel.picture1 {
+.outsideCarousel.picture1,
+.carouselPictureAlt.picture1,
+.outsideCarouselAlt.picture1 {
     background-image: url(../../assets/images/Banner1.png);
 }
 
 .carouselPicture.testPicture,
-.outsideCarousel.testPicture {
+.outsideCarousel.testPicture,
+.carouselPictureAlt.testPicture,
+.outsideCarouselAlt.testPicture  {
     background-color: aliceblue;
     color: #191919;
     display: flex;
@@ -80,5 +112,27 @@
     }
      to {
         left: -100%;
+     }
+}
+
+.outsideCarouselAlt {
+    right: -100%;
+    width: 100%;
+    height: 700px;
+    top: 0;
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    animation-name: disappearCarouselAlt;
+    animation-duration: .6s;
+    animation-iteration-count: linear;
+}
+
+@keyframes disappearCarouselAlt {
+    from {
+        right: 0%;
+    }
+     to {
+        right: -100%;
      }
 }
