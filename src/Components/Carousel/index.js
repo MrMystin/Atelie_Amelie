@@ -118,7 +118,6 @@ const Carousel = () => {
     document
       .getElementById('carouselPicture2')
       .className = 'testPicture';
-
     if (actualCarousel === carouselNum) {
       actualCarousel = 1;
       document
