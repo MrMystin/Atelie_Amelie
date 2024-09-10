@@ -3,57 +3,31 @@ import "./style.css";
 
 const carouselNum = 5;
 let actualCarousel = 1;
+let oldCarousel = 5
 let isCarouselWithAnimation = true;
+
 let carouselAnim = setInterval(() => {
   let banners = document.querySelectorAll('[carouselBanner]')
+  let carouselButtons = document.querySelectorAll('[carouselButton]')
   banners.forEach((i) => {
     i.classList.remove("outsideCarousel")
     i.classList.remove("carouselPicture")
     i.classList.remove("outsideCarouselAlt")
     i.classList.remove("carouselPictureAlt")
   })
+  carouselButtons.forEach((i) => {
+    i.classList.remove('actualItem')
+  })
   if (actualCarousel === carouselNum) {
     actualCarousel = 1
+    oldCarousel = 5
+  } else {
+    oldCarousel = actualCarousel
+    actualCarousel++
   }
   document.getElementById(`carouselPicture${actualCarousel}`).classList.add('carouselPicture')
-  /*document.getElementById("carouselPicture1").removeAttribute("class");
-  document.getElementById("carouselPicture2").removeAttribute("class");
-  document.getElementById("carouselPicture1").className = "picture1";
-  document.getElementById("carouselPicture2").className = "testPicture";
-
-  if (actualCarousel === carouselNum) {
-    actualCarousel = 1;
-    document
-      .getElementById("carouselPicture1")
-      .classList.remove("outsideCarousel");
-    document
-      .getElementById("carouselPicture1")
-      .classList.add("carouselPicture");
-    document
-      .getElementById("carouselPicture2")
-      .classList.add("outsideCarousel");
-    document
-      .getElementById("carouselPicture2")
-      .classList.remove("carouselPicture");
-    document.getElementById("carouselButton1").classList.add("actualItem");
-    document.getElementById("carouselButton2").classList.remove("actualItem");
-  } else {
-    actualCarousel++;
-    document
-      .getElementById("carouselPicture1")
-      .classList.add("outsideCarousel");
-    document
-      .getElementById("carouselPicture1")
-      .classList.remove("carouselPicture");
-    document
-      .getElementById("carouselPicture2")
-      .classList.remove("outsideCarousel");
-    document
-      .getElementById("carouselPicture2")
-      .classList.add("carouselPicture");
-    document.getElementById("carouselButton1").classList.remove("actualItem");
-    document.getElementById("carouselButton2").classList.add("actualItem");
-  }*/
+  document.getElementById(`carouselPicture${oldCarousel}`).classList.add('outsideCarousel')
+  document.getElementById(`carouselButton${actualCarousel}`).classList.add('actualItem')
 }, 5000);
 
 const Carousel = () => {
@@ -64,44 +38,22 @@ const Carousel = () => {
       document.getElementById("carouselPlaying").innerHTML = "play_arrow";
     }
 
-    document.getElementById("carouselPicture1").removeAttribute("class");
-    document.getElementById("carouselPicture2").removeAttribute("class");
-    document.getElementById("carouselPicture1").className = "picture1";
-    document.getElementById("carouselPicture2").className = "testPicture";
+    let banners = document.querySelectorAll('[carouselBanner]')
+    banners.forEach((i) => {
+      i.classList.remove("outsideCarousel")
+      i.classList.remove("carouselPicture")
+      i.classList.remove("outsideCarouselAlt")
+      i.classList.remove("carouselPictureAlt")
+    })
 
-    if (actualCarousel === 1) {
-      actualCarousel = 2;
-      document
-        .getElementById("carouselPicture1")
-        .classList.add("outsideCarouselAlt");
-      document
-        .getElementById("carouselPicture1")
-        .classList.remove("carouselPictureAlt");
-      document
-        .getElementById("carouselPicture2")
-        .classList.remove("outsideCarouselAlt");
-      document
-        .getElementById("carouselPicture2")
-        .classList.add("carouselPictureAlt");
-      document.getElementById("carouselButton1").classList.remove("actualItem");
-      document.getElementById("carouselButton2").classList.add("actualItem");
+    oldCarousel = actualCarousel
+    if (actualCarousel == 1) {
+      actualCarousel = carouselNum
     } else {
-      actualCarousel--;
-      document
-        .getElementById("carouselPicture1")
-        .classList.remove("outsideCarouselAlt");
-      document
-        .getElementById("carouselPicture1")
-        .classList.add("carouselPictureAlt");
-      document
-        .getElementById("carouselPicture2")
-        .classList.add("outsideCarouselAlt");
-      document
-        .getElementById("carouselPicture2")
-        .classList.remove("carouselPictureAlt");
-      document.getElementById("carouselButton1").classList.add("actualItem");
-      document.getElementById("carouselButton2").classList.remove("actualItem");
+      actualCarousel--
     }
+    document.getElementById(`carouselPicture${actualCarousel}`).classList.add('carouselPictureAlt')
+    document.getElementById(`carouselPicture${oldCarousel}`).classList.add('outsideCarouselAlt')
   }
 
   function carNext() {
@@ -111,43 +63,22 @@ const Carousel = () => {
       document.getElementById("carouselPlaying").innerHTML = "play_arrow";
     }
 
-    document.getElementById("carouselPicture1").removeAttribute("class");
-    document.getElementById("carouselPicture2").removeAttribute("class");
-    document.getElementById("carouselPicture1").className = "picture1";
-    document.getElementById("carouselPicture2").className = "testPicture";
-    if (actualCarousel === carouselNum) {
-      actualCarousel = 1;
-      document
-        .getElementById("carouselPicture1")
-        .classList.remove("outsideCarousel");
-      document
-        .getElementById("carouselPicture1")
-        .classList.add("carouselPicture");
-      document
-        .getElementById("carouselPicture2")
-        .classList.add("outsideCarousel");
-      document
-        .getElementById("carouselPicture2")
-        .classList.remove("carouselPicture");
-      document.getElementById("carouselButton1").classList.add("actualItem");
-      document.getElementById("carouselButton2").classList.remove("actualItem");
+    let banners = document.querySelectorAll('[carouselBanner]')
+    banners.forEach((i) => {
+      i.classList.remove("outsideCarousel")
+      i.classList.remove("carouselPicture")
+      i.classList.remove("outsideCarouselAlt")
+      i.classList.remove("carouselPictureAlt")
+    })
+
+    oldCarousel = actualCarousel
+    if (actualCarousel == carouselNum) {
+      actualCarousel = 1
     } else {
-      actualCarousel++;
-      document
-        .getElementById("carouselPicture1")
-        .classList.add("outsideCarousel");
-      document
-        .getElementById("carouselPicture1")
-        .classList.remove("carouselPicture");
-      document
-        .getElementById("carouselPicture2")
-        .classList.remove("outsideCarousel");
-      document
-        .getElementById("carouselPicture2")
-        .classList.add("carouselPicture");
-      document.getElementById("carouselButton1").classList.remove("actualItem");
-      document.getElementById("carouselButton2").classList.add("actualItem");
+      actualCarousel++
     }
+    document.getElementById(`carouselPicture${actualCarousel}`).classList.add('carouselPicture')
+    document.getElementById(`carouselPicture${oldCarousel}`).classList.add('outsideCarousel')
   }
 
   function carouselBanner1() {
@@ -213,52 +144,27 @@ const Carousel = () => {
   function playCarousel() {
     if (!isCarouselWithAnimation) {
       carouselAnim = setInterval(() => {
-        document.getElementById("carouselPicture1").removeAttribute("class");
-        document.getElementById("carouselPicture2").removeAttribute("class");
-        document.getElementById("carouselPicture1").className = "picture1";
-        document.getElementById("carouselPicture2").className = "testPicture";
-
+        let banners = document.querySelectorAll('[carouselBanner]')
+        let carouselButtons = document.querySelectorAll('[carouselButton]')
+        banners.forEach((i) => {
+          i.classList.remove("outsideCarousel")
+          i.classList.remove("carouselPicture")
+          i.classList.remove("outsideCarouselAlt")
+          i.classList.remove("carouselPictureAlt")
+        })
+        carouselButtons.forEach((i) => {
+          i.classList.remove('actualItem')
+        })
         if (actualCarousel === carouselNum) {
-          actualCarousel = 1;
-          document
-            .getElementById("carouselPicture1")
-            .classList.remove("outsideCarousel");
-          document
-            .getElementById("carouselPicture1")
-            .classList.add("carouselPicture");
-          document
-            .getElementById("carouselPicture2")
-            .classList.add("outsideCarousel");
-          document
-            .getElementById("carouselPicture2")
-            .classList.remove("carouselPicture");
-          document
-            .getElementById("carouselButton1")
-            .classList.add("actualItem");
-          document
-            .getElementById("carouselButton2")
-            .classList.remove("actualItem");
+          actualCarousel = 1
+          oldCarousel = 5
         } else {
-          actualCarousel++;
-          document
-            .getElementById("carouselPicture1")
-            .classList.add("outsideCarousel");
-          document
-            .getElementById("carouselPicture1")
-            .classList.remove("carouselPicture");
-          document
-            .getElementById("carouselPicture2")
-            .classList.remove("outsideCarousel");
-          document
-            .getElementById("carouselPicture2")
-            .classList.add("carouselPicture");
-          document
-            .getElementById("carouselButton1")
-            .classList.remove("actualItem");
-          document
-            .getElementById("carouselButton2")
-            .classList.add("actualItem");
+          oldCarousel = actualCarousel
+          actualCarousel++
         }
+        document.getElementById(`carouselPicture${actualCarousel}`).classList.add('carouselPicture')
+        document.getElementById(`carouselPicture${oldCarousel}`).classList.add('outsideCarousel')
+        document.getElementById(`carouselButton${actualCarousel}`).classList.add('actualItem')
       }, 5000);
       isCarouselWithAnimation = true;
       document.getElementById("carouselPlaying").innerHTML = "pause";
@@ -287,13 +193,13 @@ const Carousel = () => {
         <div className="outsideCarousel testPicture" id="carouselPicture2" carouselBanner="true">
           <h1>Teste Carrossel - Banner 2</h1>
         </div>
-        <div className="outsideCarousel testPicture" id="carouselPicture2" carouselBanner="true">
+        <div className="outsideCarousel testPicture" id="carouselPicture3" carouselBanner="true">
           <h1>Teste Carrossel - Banner 3</h1>
         </div>
-        <div className="outsideCarousel testPicture" id="carouselPicture2" carouselBanner="true">
+        <div className="outsideCarousel testPicture" id="carouselPicture4" carouselBanner="true">
           <h1>Teste Carrossel - Banner 4</h1>
         </div>
-        <div className="outsideCarousel testPicture" id="carouselPicture2" carouselBanner="true">
+        <div className="outsideCarousel testPicture" id="carouselPicture5" carouselBanner="true">
           <h1>Teste Carrossel - Banner 5</h1>
         </div>
 
@@ -303,17 +209,11 @@ const Carousel = () => {
           onClick={carNext}></div>
       </div>
       <div className="carouselControls">
-        <div
-          className="carouselItem actualItem"
-          id="carouselButton1"
-          onClick={carouselBanner1}></div>
-        <div
-          className="carouselItem"
-          id="carouselButton2"
-          onClick={carouselBanner2}></div>
-        <div className="carouselItem" id="carouselButton3"></div>
-        <div className="carouselItem" id="carouselButton4"></div>
-        <div className="carouselItem" id="carouselButton5"></div>
+        <div className="carouselItem actualItem" id="carouselButton1" carouselButton="true"></div>
+        <div className="carouselItem" id="carouselButton2" carouselButton="true"></div>
+        <div className="carouselItem" id="carouselButton3" carouselButton="true"></div>
+        <div className="carouselItem" id="carouselButton4" carouselButton="true"></div>
+        <div className="carouselItem" id="carouselButton5" carouselButton="true"></div>
       </div>
     </>
   );
