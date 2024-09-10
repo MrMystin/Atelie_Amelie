@@ -3,32 +3,37 @@
     height: 700px;
     overflow: hidden;
     position: relative;
-    margin-bottom: 10vh;
 }
 
 .carouselButtons {
-    width: 10%;
+    width: 20%;
     height: 100%;
     position: absolute;
-    z-index: 10
+    z-index: 10;
+    opacity: 0;
+    transition-duration: .2s;
 }
 
 .carouselButtons.previous {
-    left: 0;
+    left: -10%;
     top: 0;
 }
 
-.carouselButtons.previous:hover {
+.carouselButtons.previous{
     background-image: linear-gradient(to right, #19191977, #0000);
 }
 
 .carouselButtons.next {
-    right: 0;
+    right: -10%;
     top: 0;
 }
 
-.carouselButtons.next:hover {
+.carouselButtons.next{
     background-image: linear-gradient(to left, #19191977, #0000);
+}
+
+.carouselButtons:hover {
+    opacity: 1
 }
 
 .carouselPicture {
@@ -135,4 +140,71 @@
      to {
         right: -100%;
      }
+}
+
+.carouselControls {
+    width: 100vw;
+    height: 40px;
+    margin-bottom: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.carouselItem {
+    width: 20px;
+    height: 20px;
+    border: 1px solid var(--darkPink);
+    border-radius: 100%;
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition-duration: .1s;
+}
+
+/*.carouselItem::after {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    content: '';
+    background-color: var(--mediumPink);
+    border-radius: 100%;
+    transform: scale(0);
+    transition-duration: .1s;
+}
+
+.carouselItem:hover::after {
+    transform: scale(1);
+}*/
+
+.carouselItem:hover {
+    border: 6px solid var(--darkPink)
+}
+
+.carouselItem.actualItem {
+    background-color: var(--mediumPink);
+}
+
+.carouselItem.actualItem:hover {
+    background-color: var(--darkPink);
+}
+
+.material-symbols-rounded {
+    font-size: 40px;
+    margin: 10px 0;
+    position: absolute;
+    top: 0px;
+    right: 20px;
+    z-index: 1000;
+    transition-duration: .2s;
+    opacity: .3;
+    cursor: pointer;
+    user-select: none;
+}
+
+.material-symbols-rounded:hover {
+    opacity: 1;
 }
