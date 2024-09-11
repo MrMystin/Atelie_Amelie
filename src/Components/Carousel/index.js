@@ -39,11 +39,15 @@ const Carousel = () => {
     }
 
     let banners = document.querySelectorAll('[carouselBanner]')
+    let carouselButtons = document.querySelectorAll('[carouselButton]')
     banners.forEach((i) => {
       i.classList.remove("outsideCarousel")
       i.classList.remove("carouselPicture")
       i.classList.remove("outsideCarouselAlt")
       i.classList.remove("carouselPictureAlt")
+    })
+    carouselButtons.forEach((i) => {
+      i.classList.remove('actualItem')
     })
 
     oldCarousel = actualCarousel
@@ -54,6 +58,7 @@ const Carousel = () => {
     }
     document.getElementById(`carouselPicture${actualCarousel}`).classList.add('carouselPictureAlt')
     document.getElementById(`carouselPicture${oldCarousel}`).classList.add('outsideCarouselAlt')
+    document.getElementById(`carouselButton${actualCarousel}`).classList.add('actualItem')
   }
 
   function carNext() {
@@ -64,11 +69,15 @@ const Carousel = () => {
     }
 
     let banners = document.querySelectorAll('[carouselBanner]')
+    let carouselButtons = document.querySelectorAll('[carouselButton]')
     banners.forEach((i) => {
       i.classList.remove("outsideCarousel")
       i.classList.remove("carouselPicture")
       i.classList.remove("outsideCarouselAlt")
       i.classList.remove("carouselPictureAlt")
+    })
+    carouselButtons.forEach((i) => {
+      i.classList.remove('actualItem')
     })
 
     oldCarousel = actualCarousel
@@ -79,68 +88,10 @@ const Carousel = () => {
     }
     document.getElementById(`carouselPicture${actualCarousel}`).classList.add('carouselPicture')
     document.getElementById(`carouselPicture${oldCarousel}`).classList.add('outsideCarousel')
+    document.getElementById(`carouselButton${actualCarousel}`).classList.add('actualItem')
   }
 
-  function carouselBanner1() {
-    if (carouselAnim !== undefined) {
-      clearInterval(carouselAnim);
-      isCarouselWithAnimation = false;
-      document.getElementById("carouselPlaying").innerHTML = "play_arrow";
-    }
-
-    document.getElementById("carouselPicture1").removeAttribute("class");
-    document.getElementById("carouselPicture2").removeAttribute("class");
-    document.getElementById("carouselPicture1").className = "picture1";
-    document.getElementById("carouselPicture2").className = "testPicture";
-
-    actualCarousel = 1;
-    document
-      .getElementById("carouselPicture1")
-      .classList.remove("outsideCarousel");
-    document
-      .getElementById("carouselPicture1")
-      .classList.add("carouselPicture");
-    document
-      .getElementById("carouselPicture2")
-      .classList.add("outsideCarousel");
-    document
-      .getElementById("carouselPicture2")
-      .classList.remove("carouselPicture");
-
-    document.getElementById("carouselButton1").classList.add("actualItem");
-    document.getElementById("carouselButton2").classList.remove("actualItem");
-  }
-
-  function carouselBanner2() {
-    if (carouselAnim !== undefined) {
-      clearInterval(carouselAnim);
-      isCarouselWithAnimation = false;
-      document.getElementById("carouselPlaying").innerHTML = "play_arrow";
-    }
-
-    document.getElementById("carouselPicture1").removeAttribute("class");
-    document.getElementById("carouselPicture2").removeAttribute("class");
-    document.getElementById("carouselPicture1").className = "picture1";
-    document.getElementById("carouselPicture2").className = "testPicture";
-
-    actualCarousel = 2;
-    document
-      .getElementById("carouselPicture1")
-      .classList.add("outsideCarousel");
-    document
-      .getElementById("carouselPicture1")
-      .classList.remove("carouselPicture");
-    document
-      .getElementById("carouselPicture2")
-      .classList.remove("outsideCarousel");
-    document
-      .getElementById("carouselPicture2")
-      .classList.add("carouselPicture");
-
-    document.getElementById("carouselButton2").classList.add("actualItem");
-    document.getElementById("carouselButton1").classList.remove("actualItem");
-  }
-
+ 
   function playCarousel() {
     if (!isCarouselWithAnimation) {
       carouselAnim = setInterval(() => {
@@ -174,6 +125,36 @@ const Carousel = () => {
       isCarouselWithAnimation = false;
     }
   }
+
+  function carouselChanger(num) {
+    oldCarousel = actualCarousel
+    actualCarousel = num
+    let banners = document.querySelectorAll('[carouselBanner]')
+    let carouselButtons = document.querySelectorAll('[carouselButton]')
+    banners.forEach((i) => {
+      i.classList.remove("outsideCarousel")
+      i.classList.remove("carouselPicture")
+      i.classList.remove("outsideCarouselAlt")
+      i.classList.remove("carouselPictureAlt")
+    })
+    carouselButtons.forEach((i) => {
+      i.classList.remove('actualItem')
+    })
+
+    document.getElementById(`carouselPicture${actualCarousel}`).classList.add('carouselPicture')
+    document.getElementById(`carouselPicture${oldCarousel}`).classList.add('outsideCarousel')
+    document.getElementById(`carouselButton${actualCarousel}`).classList.add('actualItem')
+  }
+
+  const allCarouselButtons = document.querySelectorAll('[carouselButton]')
+  allCarouselButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+        let numToChange = button.id
+        numToChange = numToChange.replace('carouselButton', '')
+        console.log(numToChange)
+        carouselChanger(numToChange)
+    })
+  })
 
   return (
     <>
