@@ -1,5 +1,6 @@
 .sectionProduct {
   align-items: center;
+  padding-top: 10px;
 }
 
 .containerProduct{
@@ -12,8 +13,26 @@
 .Products{
   background-color: var(--lightGreen);
   width: 330px;
-  height: 330px;
+  height: 360px;
   border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 10px;
+  transition-duration: .2s;
+}
+
+.Products:hover {
+  margin-top: -5px;
+}
+
+.prodImage {
+  width: 300px;
+  height: 300px;
+  border-radius: 8px;
+  background-color: aliceblue;
 }
 
 @media (max-width: 768px) {

@@ -3,7 +3,37 @@
     height: 700px;
     overflow: hidden;
     position: relative;
-    margin-bottom: 10vh;
+}
+
+.carouselButtons {
+    width: 20%;
+    height: 100%;
+    position: absolute;
+    z-index: 10;
+    opacity: 0;
+    transition-duration: .2s;
+}
+
+.carouselButtons.previous {
+    left: -10%;
+    top: 0;
+}
+
+.carouselButtons.previous{
+    background-image: linear-gradient(to right, #19191977, #0000);
+}
+
+.carouselButtons.next {
+    right: -10%;
+    top: 0;
+}
+
+.carouselButtons.next{
+    background-image: linear-gradient(to left, #19191977, #0000);
+}
+
+.carouselButtons:hover {
+    opacity: 1
 }
 
 .carouselButtons {
@@ -47,13 +77,39 @@
      }
 }
 
+.carouselPictureAlt {
+    width: 100%;
+    height: 700px;
+    top: 0;
+    left: 0;
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    animation-name: appearCarouselAlt;
+    animation-duration: .6s;
+    animation-iteration-count: linear;
+}
+
+@keyframes appearCarouselAlt {
+    from {
+        left: -100%;
+    }
+     to {
+        left: 0%;
+     }
+}
+
 .carouselPicture.picture1,
-.outsideCarousel.picture1 {
+.outsideCarousel.picture1,
+.carouselPictureAlt.picture1,
+.outsideCarouselAlt.picture1 {
     background-image: url(../../assets/images/Banner1.png);
 }
 
 .carouselPicture.testPicture,
-.outsideCarousel.testPicture {
+.outsideCarousel.testPicture,
+.carouselPictureAlt.testPicture,
+.outsideCarouselAlt.testPicture  {
     background-color: aliceblue;
     color: #191919;
     display: flex;
@@ -81,4 +137,93 @@
      to {
         left: -100%;
      }
+}
+
+.outsideCarouselAlt {
+    right: -100%;
+    width: 100%;
+    height: 700px;
+    top: 0;
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    animation-name: disappearCarouselAlt;
+    animation-duration: .6s;
+    animation-iteration-count: linear;
+}
+
+@keyframes disappearCarouselAlt {
+    from {
+        right: 0%;
+    }
+     to {
+        right: -100%;
+     }
+}
+
+.carouselControls {
+    width: 100vw;
+    height: 40px;
+    margin-bottom: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.carouselItem {
+    width: 20px;
+    height: 20px;
+    border: 1px solid var(--darkPink);
+    border-radius: 100%;
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition-duration: .1s;
+}
+
+/*.carouselItem::after {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    content: '';
+    background-color: var(--mediumPink);
+    border-radius: 100%;
+    transform: scale(0);
+    transition-duration: .1s;
+}
+
+.carouselItem:hover::after {
+    transform: scale(1);
+}*/
+
+.carouselItem:hover {
+    border: 6px solid var(--darkPink)
+}
+
+.carouselItem.actualItem {
+    background-color: var(--mediumPink);
+}
+
+.carouselItem.actualItem:hover {
+    background-color: var(--darkPink);
+}
+
+.material-symbols-rounded {
+    font-size: 40px;
+    margin: 10px 0;
+    position: absolute;
+    top: 0px;
+    right: 20px;
+    z-index: 1000;
+    transition-duration: .2s;
+    opacity: .3;
+    cursor: pointer;
+    user-select: none;
+}
+
+.material-symbols-rounded:hover {
+    opacity: 1;
 }
