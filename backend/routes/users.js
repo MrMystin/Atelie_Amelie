@@ -41,16 +41,16 @@ router.post('/register', async (req, res) => {
         avatar: parseData.avatar,
         phone: parseData.phone,
         birthDate: parseData.birthDate
-          ? new Date (parseData.dateOfBirth)
+          ? new Date (parseData.birthDate)
           : null,
       }
     })
 
     // Retornar o usuário por JSON (Sem a senha)
     const { password, ...userWithoutPassword} = aNewUser
-    res.status(201).json({ "Novo usuário criado:": aNewUser})
+    res.status(201).json({ "Novo usuário criado:": userWithoutPassword})
   } catch (err) {
-
+    console.error(err)
     // Lidando com erros de validação ou outros
     if (err.errors) {
       return res.status(400).json({ errors: err.errors})
