@@ -103,7 +103,7 @@
 .outsideCarousel.picture1,
 .carouselPictureAlt.picture1,
 .outsideCarouselAlt.picture1 {
-    background-image: url(../../assets/images/Banner1.png);
+    background-image: url(../../../public/Banner1.png);
 }
 
 .carouselPicture.testPicture,

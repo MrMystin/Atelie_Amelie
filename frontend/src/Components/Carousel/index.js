@@ -1,5 +1,6 @@
 import React from "react";
 import "./style.css";
+import a from "."
 
 const carouselNum = 5;
 let actualCarousel = 1;
