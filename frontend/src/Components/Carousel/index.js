@@ -1,6 +1,5 @@
 import React from "react";
 import "./style.css";
-import a from "."
 
 const carouselNum = 5;
 let actualCarousel = 1;
@@ -52,7 +51,7 @@ const Carousel = () => {
     })
 
     oldCarousel = actualCarousel
-    if (actualCarousel == 1) {
+    if (actualCarousel === 1) {
       actualCarousel = carouselNum
     } else {
       actualCarousel--
@@ -82,7 +81,7 @@ const Carousel = () => {
     })
 
     oldCarousel = actualCarousel
-    if (actualCarousel == carouselNum) {
+    if (actualCarousel === carouselNum) {
       actualCarousel = 1
     } else {
       actualCarousel++
@@ -128,7 +127,12 @@ const Carousel = () => {
   }
 
   function carouselChanger(num) {
-    num = num.replace('carouselButton', '')
+    if (carouselAnim !== undefined) {
+      clearInterval(carouselAnim);
+      isCarouselWithAnimation = false;
+      document.getElementById("carouselPlaying").innerHTML = "play_arrow";
+    }
+
     oldCarousel = actualCarousel
     actualCarousel = num
     let banners = document.querySelectorAll('[carouselBanner]')
@@ -147,16 +151,6 @@ const Carousel = () => {
     document.getElementById(`carouselPicture${oldCarousel}`).classList.add('outsideCarousel')
     document.getElementById(`carouselButton${actualCarousel}`).classList.add('actualItem')
   }
-
-  const allCarouselButtons = document.querySelectorAll('[carouselButton]')
-  allCarouselButtons.forEach((button) => {
-    button.addEventListener('click', () => {
-        let numToChange = button.id
-        numToChange = numToChange.replace('carouselButton', '')
-        console.log(numToChange)
-        carouselChanger(numToChange)
-    })
-  })
 
   return (
     <>
@@ -192,11 +186,11 @@ const Carousel = () => {
           onClick={carNext}></div>
       </div>
       <div className="carouselControls">
-        <div className="carouselItem actualItem" id="carouselButton1" carouselButton="true"></div>
-        <div className="carouselItem" id="carouselButton2" carouselButton="true"></div>
-        <div className="carouselItem" id="carouselButton3" carouselButton="true"></div>
-        <div className="carouselItem" id="carouselButton4" carouselButton="true"></div>
-        <div className="carouselItem" id="carouselButton5" carouselButton="true"></div>
+        <div className="carouselItem actualItem" id="carouselButton1" carouselButton="true" onClick={() => {carouselChanger(1)}}></div>
+        <div className="carouselItem" id="carouselButton2" carouselButton="true" onClick={() => {carouselChanger(2)}}></div>
+        <div className="carouselItem" id="carouselButton3" carouselButton="true" onClick={() => {carouselChanger(3)}}></div>
+        <div className="carouselItem" id="carouselButton4" carouselButton="true" onClick={() => {carouselChanger(4)}}></div>
+        <div className="carouselItem" id="carouselButton5" carouselButton="true" onClick={() => {carouselChanger(5)}}></div>
       </div>
     </>
   );
