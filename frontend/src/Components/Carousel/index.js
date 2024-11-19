@@ -133,23 +133,26 @@ const Carousel = () => {
       document.getElementById("carouselPlaying").innerHTML = "play_arrow";
     }
 
-    oldCarousel = actualCarousel
-    actualCarousel = num
-    let banners = document.querySelectorAll('[carouselBanner]')
-    let carouselButtons = document.querySelectorAll('[carouselButton]')
-    banners.forEach((i) => {
-      i.classList.remove("outsideCarousel")
-      i.classList.remove("carouselPicture")
-      i.classList.remove("outsideCarouselAlt")
-      i.classList.remove("carouselPictureAlt")
-    })
-    carouselButtons.forEach((i) => {
-      i.classList.remove('actualItem')
-    })
 
-    document.getElementById(`carouselPicture${actualCarousel}`).classList.add('carouselPicture')
-    document.getElementById(`carouselPicture${oldCarousel}`).classList.add('outsideCarousel')
-    document.getElementById(`carouselButton${actualCarousel}`).classList.add('actualItem')
+    if (actualCarousel !== num) {
+      oldCarousel = actualCarousel
+      actualCarousel = num
+      let banners = document.querySelectorAll('[carouselBanner]')
+      let carouselButtons = document.querySelectorAll('[carouselButton]')
+      banners.forEach((i) => {
+        i.classList.remove("outsideCarousel")
+        i.classList.remove("carouselPicture")
+        i.classList.remove("outsideCarouselAlt")
+        i.classList.remove("carouselPictureAlt")
+      })
+      carouselButtons.forEach((i) => {
+        i.classList.remove('actualItem')
+      })
+  
+      document.getElementById(`carouselPicture${actualCarousel}`).classList.add('carouselPicture')
+      document.getElementById(`carouselPicture${oldCarousel}`).classList.add('outsideCarousel')
+      document.getElementById(`carouselButton${actualCarousel}`).classList.add('actualItem')
+    }
   }
 
   return (
