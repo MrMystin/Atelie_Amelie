@@ -19,9 +19,26 @@ code {
 
 /*Definam as cores das variaveis aqui!*/
 :root {
-  --lightPink: #fce4ec;
+  /*--lightPink: #fce4ec;
   --darkPink: #e75480;
   --mediumPink: #df729b;
   --darkGreen: #5ca675;
-  --lightGreen: #e6f5e6;
+  --lightGreen: #e6f5e6;*/
+
+  --bg-P1: #f1a9ef;
+  --bg-P2: #f4c5f3;
+  --bg-P3: #fce5fc;
+  --bg-G1: #69dcd9;
+  --bg-G2: #9bedea;
+  --bg-G3: #cafdfc;
+  --bg-OG1: #9eea92;
+  --bg-OG2: #d4f5d0;
+  --bg-OG3: #e7f4ea;
+
+  --fg-P1: #60445e;
+  --fg-P2: #996b97;
+  --fg-G1: #326665;
+  --fg-G2: #689b99;
+  --fg-OG1: #425240;
+  --fg-OG2: #668062;
 }
