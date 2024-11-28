@@ -13,4 +13,15 @@
     border-radius: 8px;
     border: 3px solid black;
     background-color: var(--bg-P1);
+    box-sizing: border-box;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.sectionInfos div h1,
+.sectionInfos div span {
+    color: var(--fg-P1);
 }

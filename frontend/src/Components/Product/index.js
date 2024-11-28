@@ -47,22 +47,6 @@ const Product = () => {
           <div className="prodImage"></div>
           <div className="prodInfos"><p className="prodName">Item 10</p>R$00,00</div>
         </div>
-        <div className="Products" id="Product10">
-          <div className="prodImage"></div>
-          <div className="prodInfos"><p className="prodName">Item 11</p>R$00,00</div>
-        </div>
-        <div className="Products" id="Product10">
-          <div className="prodImage"></div>
-          <div className="prodInfos"><p className="prodName">Item 12</p>R$00,00</div>
-        </div>
-        <div className="Products" id="Product10">
-          <div className="prodImage"></div>
-          <div className="prodInfos"><p className="prodName">Item 13</p>R$00,00</div>
-        </div>
-                <div className="Products" id="Product10">
-          <div className="prodImage"></div>
-          <div className="prodInfos"><p className="prodName">Item 14</p>R$00,00</div>
-        </div>
       </div>
       {/* <nav>
         <ul>
