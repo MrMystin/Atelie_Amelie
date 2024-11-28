@@ -1,15 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 html {
   scroll-behavior: smooth;
 }
 
+* {
+  padding: 0;
+  margin: 0;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: "Montserrat", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+  background-color: var(--bg-P3);
+  color: var(--fg-P2)
 }
 
 code {
@@ -41,4 +48,32 @@ code {
   --fg-G2: #689b99;
   --fg-OG1: #425240;
   --fg-OG2: #668062;
+}
+
+.sectionName {
+  text-align: center;
+  width: 100vw;
+  font-size: 40px;
+  padding: 0;
+  margin: 40px 0;
+}
+
+.yMeter {
+  width: 10px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: calc(50% - 5px);
+  background-color: red;
+  z-index: 1000;
+}
+
+.xMeter {
+  width: 100vw;
+  height: 10px;
+  position: fixed;
+  top: calc(50% - 5px);
+  left: 0;
+  background-color: red;
+  z-index: 1000;
 }
