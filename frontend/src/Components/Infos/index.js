@@ -6,9 +6,15 @@ const Infos = () => {
   return (
     <section className="sectionInfos">
       <div>
+        <span class="material-symbols-rounded">
+          payments
+        </span>
         <h1>Pague com Pix</h1>
       </div>
       <div>
+        <span class="material-symbols-rounded">
+          local_shipping
+        </span>
         <h1>Entregas em SP</h1>
       </div>
       <div>

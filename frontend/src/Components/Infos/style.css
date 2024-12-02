@@ -8,7 +8,7 @@
 }
 
 .sectionInfos div {
-    width: 300px;
+    width: 400px;
     height: 100px;
     border-radius: 8px;
     border: 3px solid black;
@@ -19,9 +19,14 @@
     justify-content: center;
     align-items: center;
     gap: 10px;
+    transition-duration: .2s;
 }
 
 .sectionInfos div h1,
 .sectionInfos div span {
     color: var(--fg-P1);
+}
+
+.sectionInfos div span {
+    font-size: 40px;
 }

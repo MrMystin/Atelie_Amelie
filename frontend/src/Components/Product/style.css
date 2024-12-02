@@ -14,7 +14,7 @@
   background-color: var(--bg-P1);
   width: 330px;
   height: 400px;
-  border-radius: 20px;
+  border-radius: 30px;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -37,7 +37,7 @@
 .prodImage {
   width: 280px;
   height: 280px;
-  border-radius: 8px;
+  border-radius: 20px;
   background-color: aliceblue;
   border: 3px solid black;
   margin: 0 auto;
