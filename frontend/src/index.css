@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  background-color: var(--bg-P3);
+  color: var(--fg-P2)
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/*Definam as cores das variaveis aqui!*/
+:root {
+  /*--lightPink: #fce4ec;
+  --darkPink: #e75480;
+  --mediumPink: #df729b;
+  --darkGreen: #5ca675;
+  --lightGreen: #e6f5e6;*/
+
+  --bg-P1: #f1a9ef;
+  --bg-P2: #f4c5f3;
+  --bg-P3: #fce5fc;
+  --bg-G1: #69dcd9;
+  --bg-G2: #9bedea;
+  --bg-G3: #cafdfc;
+  --bg-OG1: #9eea92;
+  --bg-OG2: #d4f5d0;
+  --bg-OG3: #e7f4ea;
+
+  --fg-P1: #60445e;
+  --fg-P2: #996b97;
+  --fg-G1: #326665;
+  --fg-G2: #689b99;
+  --fg-OG1: #425240;
+  --fg-OG2: #668062;
+}
+
+.sectionName {
+  text-align: center;
+  width: 100vw;
+  font-size: 40px;
+  padding: 0;
+  margin: 40px 0;
+  font-weight: normal;
+}
+
+.yMeter {
+  width: 10px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: calc(50% - 5px);
+  background-color: red;
+  z-index: 1000;
+}
+
+.xMeter {
+  width: 100vw;
+  height: 10px;
+  position: fixed;
+  top: calc(50% - 5px);
+  left: 0;
+  background-color: red;
+  z-index: 1000;
+}

@@ -1,0 +1,101 @@
+.sectionProduct {
+  align-items: center;
+  padding-top: 10px;
+}
+
+.containerProduct{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.Products{
+  background-color: var(--bg-P1);
+  width: 330px;
+  height: 400px;
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 10px;
+  transition-duration: .2s;
+  border: 3px solid black;
+  color: var(--fg-P1)
+}
+
+.Products:hover {
+  margin-top: -5px;
+}
+
+.prodInfos {
+  display: flex;
+  flex-direction: column;
+}
+
+.prodImage {
+  width: 280px;
+  height: 280px;
+  border-radius: 20px;
+  background-color: aliceblue;
+  border: 3px solid black;
+  margin: 0 auto;
+  background-size: cover;
+  background-position: center;
+}
+
+@media (max-width: 768px) {
+  .Products {
+    width: 75vw;
+  }
+}
+
+.prodName {
+  font-weight: bold;
+  font-size: 25px;
+  padding: 0;
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+/*Products Images*/
+.prodImage.img1 {
+  background-image: url(../../assets/images/products/catBallet.png);
+}
+
+.prodImage.img2 {
+  background-image: url(../../assets/images/products/cisne.png);
+}
+
+.prodImage.img3 {
+  background-image: url(../../assets/images/products/santa.png);
+}
+
+.prodImage.img4 {
+  background-image: url(../../assets/images/products/amelie.png);
+}
+
+.prodImage.img5 {
+  background-image: url(../../assets/images/products/christmasCard.png);
+}
+
+.prodImage.img6 {
+  background-image: url(../../assets/images/products/bdayCard.png);
+}
+
+.prodImage.img7 {
+  background-image: url(../../assets/images/products/farmBag.png);
+}
+
+.prodImage.img8 {
+  background-image: url(../../assets/images/products/xmasCalendar.png);
+}
+
+.prodImage.img9 {
+  background-image: url(../../assets/images/products/elephant.png);
+}
+
+.prodImage.img10 {
+  background-image: url(../../assets/images/products/doorSanta.png);
+}

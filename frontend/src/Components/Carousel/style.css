@@ -1,0 +1,251 @@
+.carousel {
+    width: 100vw;
+    height: 900px;
+    overflow: hidden;
+    position: relative;
+    border-bottom: 3px solid black;
+}
+
+.carouselButtons {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    z-index: 10;
+    transition-duration: .2s;
+    background-color: var(--bg-P3);
+    border-radius: 100%;
+    border: 3px solid black;
+    color: var(--fg-P2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carouselButtons span {
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carouselButtons.previous span {
+    rotate: 180deg;
+}
+
+.carouselButtons.previous {
+    left: 20px;
+    top: calc(50% - 25px);
+}
+
+.carouselButtons.next {
+    right: 35px;
+    top: calc(50% - 25px);
+}
+
+.carouselPicture {
+    width: 100%;
+    height: 900px;
+    top: 0;
+    right: 0;
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    animation-name: appearCarousel;
+    animation-duration: .6s;
+    animation-iteration-count: linear;
+}
+
+@keyframes appearCarousel {
+    from {
+        right: -100%;
+    }
+     to {
+        right: 0%;
+     }
+}
+
+.carouselPictureAlt {
+    width: 100%;
+    height: 900px;
+    top: 0;
+    left: 0;
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    animation-name: appearCarouselAlt;
+    animation-duration: .6s;
+    animation-iteration-count: linear;
+}
+
+@keyframes appearCarouselAlt {
+    from {
+        left: -100%;
+    }
+     to {
+        left: 0%;
+     }
+}
+
+.carouselPicture.picture1,
+.outsideCarousel.picture1,
+.carouselPictureAlt.picture1,
+.outsideCarouselAlt.picture1 {
+    background-image: url(../../../public/Banner1.png);
+}
+
+.carouselPicture.picture2,
+.outsideCarousel.picture2,
+.carouselPictureAlt.picture2,
+.outsideCarouselAlt.picture2 {
+    background-image: url(../../../public/Banner2.png);
+}
+
+.carouselPicture.picture3,
+.outsideCarousel.picture3,
+.carouselPictureAlt.picture3,
+.outsideCarouselAlt.picture3 {
+    background-image: url(../../../public/Banner3.png);
+}
+
+.carouselPicture.picture4,
+.outsideCarousel.picture4,
+.carouselPictureAlt.picture4,
+.outsideCarouselAlt.picture4 {
+    background-image: url(../../../public/Banner4.png);
+}
+
+.carouselPicture.picture5,
+.outsideCarousel.picture5,
+.carouselPictureAlt.picture5,
+.outsideCarouselAlt.picture5 {
+    background-image: url(../../../public/Banner5.png);
+}
+
+.carouselPicture.testPicture,
+.outsideCarousel.testPicture,
+.carouselPictureAlt.testPicture,
+.outsideCarouselAlt.testPicture  {
+    background-color: aliceblue;
+    color: #191919;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.outsideCarousel {
+    left: -100%;
+    width: 100%;
+    height: 900px;
+    top: 0;
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    animation-name: disappearCarousel;
+    animation-duration: .6s;
+    animation-iteration-count: linear;
+}
+
+@keyframes disappearCarousel {
+    from {
+        left: 0%;
+    }
+     to {
+        left: -100%;
+     }
+}
+
+.outsideCarouselAlt {
+    right: -100%;
+    width: 100%;
+    height: 900px;
+    top: 0;
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    animation-name: disappearCarouselAlt;
+    animation-duration: .6s;
+    animation-iteration-count: linear;
+}
+
+@keyframes disappearCarouselAlt {
+    from {
+        right: 0%;
+    }
+     to {
+        right: -100%;
+     }
+}
+
+.carouselControls {
+    width: 100vw;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    position: absolute;
+    bottom: 20px;
+}
+
+.carouselItem {
+    width: 20px;
+    height: 20px;
+    border: 1px solid var(--bg-G3);
+    background-color: var(--bg-G3);
+    border-radius: 100%;
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition-duration: .1s;
+}
+
+/*.carouselItem::after {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    content: '';
+    background-color: var(--mediumPink);
+    border-radius: 100%;
+    transform: scale(0);
+    transition-duration: .1s;
+}
+
+.carouselItem:hover::after {
+    transform: scale(1);
+}*/
+
+.carouselItem:hover {
+    border: 6px solid var(--bg-G1)
+}
+
+.carouselItem.actualItem {
+    background-color: var(--bg-G1);
+    border: 2px solid black;
+}
+
+.carouselItem.actualItem:hover {
+    background-color: var(--bg-G2);
+}
+
+.material-symbols-rounded {
+    margin: 10px 0;
+    z-index: 11;
+    transition-duration: .2s;
+    cursor: pointer;
+    user-select: none;
+}
+
+.pauseButton {
+    font-size: 40px;
+    opacity: .3;
+    color: black;    
+    position: absolute;
+    top: 0px;
+    right: 20px;
+}
+
+.pauseButton:hover {
+    opacity: 1;
+}
