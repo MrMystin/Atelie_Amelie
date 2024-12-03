@@ -12,7 +12,7 @@ const Header = () => {
   return (
     <header>
       <div className="logo">
-        <img src={logoG1} href="#home" alt="Ateliê Amélie" />
+        <a href="#"><img src={logoG1} alt="Ateliê Amélie" /></a>
           <h1>Ateliê Amélie</h1>
       </div>
       <nav>

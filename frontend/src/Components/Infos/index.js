@@ -15,7 +15,7 @@ const Infos = () => {
         <span class="material-symbols-rounded">
           local_shipping
         </span>
-        <h1>Entregas em SP</h1>
+        <h1>Entregas no país todo</h1>
       </div>
       <div>
         <span class="material-symbols-rounded">

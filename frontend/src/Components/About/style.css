@@ -11,11 +11,12 @@
 .personPicture {
     width: 330px;
     height: 330px;
-    background-color: var(--darkPink);
-    border-radius: 100%;
+    background-color: var(--bg-P1);
+    border-radius: 30px;
     background-size: cover;
     background-position: center;
-    background-image: url(../../assets/images/R.png);
+    background-image: url(../../assets/images/icons/mariIcon.png);
+    border: 3px solid black;
 }
 
 .aboutUs .sectionName {
@@ -28,7 +29,16 @@
 
 .textAlign {
     width: 50vw;
-    text-align: center;
+    text-align: left;
+}
+
+.textAlign p {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.textAlign a {
+    color: var(--fg-P2);
 }
 
 @media (max-width: 768px) {

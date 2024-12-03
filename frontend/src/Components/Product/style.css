@@ -41,6 +41,8 @@
   background-color: aliceblue;
   border: 3px solid black;
   margin: 0 auto;
+  background-size: cover;
+  background-position: center;
 }
 
 @media (max-width: 768px) {
@@ -57,4 +59,43 @@
   margin-bottom: 0;
 }
 
+/*Products Images*/
+.prodImage.img1 {
+  background-image: url(../../assets/images/products/catBallet.png);
+}
 
+.prodImage.img2 {
+  background-image: url(../../assets/images/products/cisne.png);
+}
+
+.prodImage.img3 {
+  background-image: url(../../assets/images/products/santa.png);
+}
+
+.prodImage.img4 {
+  background-image: url(../../assets/images/products/amelie.png);
+}
+
+.prodImage.img5 {
+  background-image: url(../../assets/images/products/christmasCard.png);
+}
+
+.prodImage.img6 {
+  background-image: url(../../assets/images/products/bdayCard.png);
+}
+
+.prodImage.img7 {
+  background-image: url(../../assets/images/products/farmBag.png);
+}
+
+.prodImage.img8 {
+  background-image: url(../../assets/images/products/xmasCalendar.png);
+}
+
+.prodImage.img9 {
+  background-image: url(../../assets/images/products/elephant.png);
+}
+
+.prodImage.img10 {
+  background-image: url(../../assets/images/products/doorSanta.png);
+}

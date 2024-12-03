@@ -1,3 +1,10 @@
+footer {
+  background-color: var(--bg-G1);
+  padding: 20px 0;
+  color: var(--fg-G1);
+  border-top: 3px solid black;
+}
+
 .textFooter {
   display: flex;
   justify-content: center;

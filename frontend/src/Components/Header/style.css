@@ -98,3 +98,9 @@ nav ul li a:hover::after {
     flex-direction: column;
   }
 }
+
+header .logo a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

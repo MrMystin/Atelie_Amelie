@@ -149,9 +149,16 @@ const Carousel = () => {
         i.classList.remove('actualItem')
       })
 
-      document.getElementById(`carouselPicture${actualCarousel}`).classList.add('carouselPicture')
-      document.getElementById(`carouselPicture${oldCarousel}`).classList.add('outsideCarousel')
+      if (oldCarousel > actualCarousel) {
+        document.getElementById(`carouselPicture${actualCarousel}`).classList.add('carouselPictureAlt')
+        document.getElementById(`carouselPicture${oldCarousel}`).classList.add('outsideCarouselAlt')
+      } else {
+        document.getElementById(`carouselPicture${actualCarousel}`).classList.add('carouselPicture')
+        document.getElementById(`carouselPicture${oldCarousel}`).classList.add('outsideCarousel')
+      }
+
       document.getElementById(`carouselButton${actualCarousel}`).classList.add('actualItem')
+
     }
   }
 
@@ -174,17 +181,15 @@ const Carousel = () => {
         </div>
 
         <div className="carouselPicture picture1" id="carouselPicture1" carouselBanner="true"></div>
-        <div className="outsideCarousel testPicture" id="carouselPicture2" carouselBanner="true">
-          <h1>Teste Carrossel - Banner 2</h1>
+        <div className="outsideCarousel picture2" id="carouselPicture2" carouselBanner="true">
+  
         </div>
-        <div className="outsideCarousel testPicture" id="carouselPicture3" carouselBanner="true">
-          <h1>Teste Carrossel - Banner 3</h1>
+        <div className="outsideCarousel picture3" id="carouselPicture3" carouselBanner="true">
         </div>
-        <div className="outsideCarousel testPicture" id="carouselPicture4" carouselBanner="true">
-          <h1>Teste Carrossel - Banner 4</h1>
+        <div className="outsideCarousel picture4" id="carouselPicture4" carouselBanner="true">
         </div>
-        <div className="outsideCarousel testPicture" id="carouselPicture5" carouselBanner="true">
-          <h1>Teste Carrossel - Banner 5</h1>
+        <div className="outsideCarousel picture5" id="carouselPicture5" carouselBanner="true">
+
         </div>
 
         <div
