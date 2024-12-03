@@ -21,7 +21,7 @@ const Product = () => {
         </div>
         <div className="Products" id="Product4">
           <div className="prodImage img4"></div>
-          <div className="prodInfos"><p className="prodName">Gurilanda com nome</p>R$70,00</div>     
+          <div className="prodInfos"><p className="prodName">Guirlanda com nome</p>R$70,00</div>     
         </div>
         <div className="Products" id="Product5">
           <div className="prodImage img5"></div>
