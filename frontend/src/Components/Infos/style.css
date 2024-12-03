@@ -30,3 +30,13 @@
 .sectionInfos div span {
     font-size: 40px;
 }
+
+@media (max-width: 768px) {
+    .sectionInfos {
+        flex-direction: column;
+    }
+
+    .sectionInfos div {
+        width: 90vw;
+    }
+  }
